@@ -50,7 +50,7 @@ class StatuController extends Controller
         $statu = Statu::create($validated);
 
         return redirect()
-            ->route('status.edit', $statu)
+            ->route('estatus.edit', $statu)
             ->withSuccess(__('crud.common.created'));
     }
 
@@ -89,7 +89,7 @@ class StatuController extends Controller
         $statu->update($validated);
 
         return redirect()
-            ->route('status.edit', $statu)
+            ->route('estatus.edit', $statu)
             ->withSuccess(__('crud.common.saved'));
     }
 
@@ -103,7 +103,7 @@ class StatuController extends Controller
         $statu->delete();
 
         return redirect()
-            ->route('status.index')
+            ->route('estatus.index')
             ->withSuccess(__('crud.common.removed'));
     }
 }
