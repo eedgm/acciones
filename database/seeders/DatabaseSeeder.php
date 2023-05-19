@@ -47,6 +47,6 @@ class DatabaseSeeder extends Seeder
         Statu::create(['nombre' => 'Iniciado', 'color' => 'blue']);
         Statu::create(['nombre' => 'Completado', 'color' => 'green']);
         Statu::create(['nombre' => 'Sin completar', 'color' => 'red']);
-        $this->call(UserSeeder::class);
+        // $this->call(UserSeeder::class);
     }
 }

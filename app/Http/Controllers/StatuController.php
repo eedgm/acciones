@@ -67,8 +67,9 @@ class StatuController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Request $request, Statu $statu): View
+    public function edit(Request $request, $statu): View
     {
+        $statu = Statu::find($statu);
         $this->authorize('update', $statu);
 
         return view('app.status.edit', compact('statu'));

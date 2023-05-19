@@ -39,6 +39,6 @@ Route::prefix('/')
         Route::resource('actions', ActionController::class);
         Route::resource('agrupacions', AgrupacionController::class);
         Route::resource('prioridads', PrioridadController::class);
-        Route::resource('status', StatuController::class);
+        Route::resource('estatus', StatuController::class);
         Route::resource('users', UserController::class);
     });

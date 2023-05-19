@@ -1,14 +1,14 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="text-xl font-semibold leading-tight text-gray-800">
             @lang('crud.status.index_title')
         </h2>
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <x-partials.card>
-                <div class="mb-5 mt-4">
+                <div class="mt-4 mb-5">
                     <div class="flex flex-wrap justify-between">
                         <div class="md:w-1/2">
                             <form>
@@ -31,10 +31,10 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="md:w-1/2 text-right">
+                        <div class="text-right md:w-1/2">
                             @can('create', App\Models\Statu::class)
                             <a
-                                href="{{ route('status.create') }}"
+                                href="{{ route('estatus.create') }}"
                                 class="button button-primary"
                             >
                                 <i class="mr-1 icon ion-md-add"></i>
@@ -74,15 +74,11 @@
                                     <div
                                         role="group"
                                         aria-label="Row Actions"
-                                        class="
-                                            relative
-                                            inline-flex
-                                            align-middle
-                                        "
+                                        class="relative inline-flex align-middle "
                                     >
                                         @can('update', $statu)
                                         <a
-                                            href="{{ route('status.edit', $statu) }}"
+                                            href="{{ route('estatus.edit', $statu) }}"
                                             class="mr-1"
                                         >
                                             <button
@@ -96,7 +92,7 @@
                                         </a>
                                         @endcan @can('view', $statu)
                                         <a
-                                            href="{{ route('status.show', $statu) }}"
+                                            href="{{ route('estatus.show', $statu) }}"
                                             class="mr-1"
                                         >
                                             <button
@@ -108,7 +104,7 @@
                                         </a>
                                         @endcan @can('delete', $statu)
                                         <form
-                                            action="{{ route('status.destroy', $statu) }}"
+                                            action="{{ route('estatus.destroy', $statu) }}"
                                             method="POST"
                                             onsubmit="return confirm('{{ __('crud.common.are_you_sure') }}')"
                                         >
@@ -118,11 +114,7 @@
                                                 class="button"
                                             >
                                                 <i
-                                                    class="
-                                                        icon
-                                                        ion-md-trash
-                                                        text-red-600
-                                                    "
+                                                    class="text-red-600 icon ion-md-trash"
                                                 ></i>
                                             </button>
                                         </form>
@@ -141,7 +133,7 @@
                         <tfoot>
                             <tr>
                                 <td colspan="3">
-                                    <div class="mt-10 px-4">
+                                    <div class="px-4 mt-10">
                                         {!! $status->render() !!}
                                     </div>
                                 </td>
