@@ -9,7 +9,7 @@
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <x-partials.card>
                 <x-slot name="title">
-                    <a href="{{ route('status.index') }}" class="mr-4"
+                    <a href="{{ route('estatus.index') }}" class="mr-4"
                         ><i class="mr-1 icon ion-md-arrow-back"></i
                     ></a>
                 </x-slot>
@@ -24,7 +24,7 @@
                     <div class="mt-10">
                         <a href="{{ route('estatus.index') }}" class="button">
                             <i
-                                class="mr-1  icon ion-md-return-left text-primary"
+                                class="mr-1 icon ion-md-return-left text-primary"
                             ></i>
                             @lang('crud.common.back')
                         </a>
