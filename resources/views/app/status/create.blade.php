@@ -16,7 +16,7 @@
 
                 <x-form
                     method="POST"
-                    action="{{ route('status.store') }}"
+                    action="{{ route('estatus.store') }}"
                     class="mt-4"
                 >
                     @include('app.status.form-inputs')
