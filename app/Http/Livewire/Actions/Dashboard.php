@@ -9,10 +9,13 @@ use Livewire\Component;
 use App\Models\Prioridad;
 use Illuminate\View\View;
 use App\Models\Agrupacion;
+use Livewire\WithPagination;
 use Illuminate\Support\Facades\Auth;
 
 class Dashboard extends Component
 {
+    use WithPagination;
+
     public User $user;
     public Action $action;
     public $actionEdit = null;
@@ -105,14 +108,14 @@ class Dashboard extends Component
                         ->orWhere('descripcion', 'like', "%{$this->search}%");
                 })
                 ->orderBy('id', 'desc')
-                ->get();
+                ->paginate(10);
         } else {
             $actions = Action::when($this->search, function ($query) {
                     $query->where('accion', 'like', "%{$this->search}%")
                         ->orWhere('descripcion', 'like', "%{$this->search}%");
                 })
                 ->orderBy('id', 'desc')
-                ->get();
+                ->paginate(10);
         }
         return view('livewire.actions.dashboard', compact('actions'));
     }
