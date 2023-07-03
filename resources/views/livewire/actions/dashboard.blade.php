@@ -103,12 +103,12 @@
                                 </td>
                                 <td>
                                     @foreach ($action->agrupacions as $cluster)
-                                        <span class="px-2 py-1 text-xs rounded-full bg-gray-50">{{ $cluster->nombre }}</span>
+                                        <span class="px-2 py-1 text-xs truncate rounded-full bg-gray-50">{{ $cluster->nombre }}</span>
                                     @endforeach
                                 </td>
                                 <td>
                                     @foreach ($action->users as $user)
-                                        <span class="px-2 py-1 text-xs rounded-full bg-gray-50">{{ $user->name }}</span>
+                                        <span class="px-2 py-1 text-xs truncate rounded-full bg-pink-50">{{ $user->name }}</span>
                                     @endforeach
                                 </td>
                                 <td
@@ -163,6 +163,11 @@
                             </tr>
                             @endforelse
                         </tbody>
+                        <tfoot>
+                            <tr>
+                                {{ $actions->links() }}
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
             </x-partials.card>
