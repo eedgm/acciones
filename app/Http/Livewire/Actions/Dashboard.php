@@ -21,6 +21,7 @@ class Dashboard extends Component
     public $actionEdit = null;
     public $status, $clusters, $priorities;
     public $search = '';
+    public $filterCompleted = false;
 
     public $modalTitle = 'Nueva Acción';
     public $showingModal = false;
@@ -86,6 +87,11 @@ class Dashboard extends Component
         $this->dispatchBrowserEvent('refresh');
     }
 
+    public function filterCompleted()
+    {
+        $this->filterCompleted = !$this->filterCompleted;
+    }
+
     public function updateAction()
     {
         $this->validate();
@@ -107,6 +113,7 @@ class Dashboard extends Component
                     $query->where('accion', 'like', "%{$this->search}%")
                         ->orWhere('descripcion', 'like', "%{$this->search}%");
                 })
+                ->where('statu_id', $this->filterCompleted ? '=' : '!=', 3)
                 ->orderBy('id', 'desc')
                 ->paginate(10);
         } else {
@@ -114,6 +121,7 @@ class Dashboard extends Component
                     $query->where('accion', 'like', "%{$this->search}%")
                         ->orWhere('descripcion', 'like', "%{$this->search}%");
                 })
+                ->where('statu_id', $this->filterCompleted ? '=' : '!=', 3)
                 ->orderBy('id', 'desc')
                 ->paginate(10);
         }

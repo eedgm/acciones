@@ -4,7 +4,7 @@
             <x-partials.card>
                 <div class="mt-4 mb-5">
                     <div class="flex flex-wrap justify-between">
-                        <div class="md:w-1/2">
+                        <div class="md:w-6/12">
                             <form wire:submit.prevent="searchResult">
                                 <div class="flex items-center w-full">
                                     <x-inputs.text
@@ -25,7 +25,10 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="text-right md:w-1/2">
+                        <div class="pl-5 text-left md:w-2/12">
+                            <input type="checkbox" wire:click="filterCompleted" id="completed"><label class="pl-2" for="completed">Mostrar solo completados</label>
+                        </div>
+                        <div class="text-right md:w-4/12">
                             @can('create', App\Models\Action::class)
                             <a
                                 href="#"
