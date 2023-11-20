@@ -166,11 +166,6 @@
                             </tr>
                             @endforelse
                         </tbody>
-                        <tfoot>
-                            <tr>
-                                {{ $actions->links() }}
-                            </tr>
-                        </tfoot>
                     </table>
                 </div>
             </x-partials.card>
