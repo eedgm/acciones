@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Auth;
 
 class Dashboard extends Component
 {
+    use WithPagination;
+
     public User $user;
     public Action $action;
     public $actionEdit = null;
@@ -121,7 +123,7 @@ class Dashboard extends Component
                 })
                 ->where('statu_id', $this->filterCompleted ? '=' : '!=', 3)
                 ->orderBy('id', 'desc')
-                ->get();
+                ->paginate(10);
         }
         return view('livewire.actions.dashboard', compact('actions'));
     }

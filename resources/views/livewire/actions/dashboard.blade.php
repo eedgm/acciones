@@ -166,6 +166,15 @@
                             </tr>
                             @endforelse
                         </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="px-4 mt-10">
+                                        {{ $actions->render() }}
+                                    </div>
+                                </td>
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
             </x-partials.card>

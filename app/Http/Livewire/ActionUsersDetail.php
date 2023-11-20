@@ -6,11 +6,13 @@ use App\Models\User;
 use App\Models\Action;
 use Livewire\Component;
 use Illuminate\View\View;
+use Livewire\WithPagination;
 use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class ActionUsersDetail extends Component
 {
+    use WithPagination;
     use AuthorizesRequests;
 
     public Action $action;
